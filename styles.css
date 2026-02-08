@@ -120,7 +120,7 @@ h1{
   
 /* ARTICLES GRID (neat + reorganizes on resize) */
 #container{
-    width: min(1200px, 96%);
+    width: min(1400px, 96%);
     margin: 0 auto 60px auto;
   
     display: flex;
