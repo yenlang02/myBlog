@@ -6,7 +6,7 @@
 
 /* layout variables */
 :root{
-    --menuWidth: 15%;
+    --menuWidth: max(170px, 15%);
     --headerHeight: 140px;
 }
   
@@ -28,7 +28,7 @@ body{
     left: 0;
     bottom: 0;                 /* spans full height */
     width: var(--menuWidth);
-    min-width: 170px;          /* keeps it usable on smaller windows */
+    /*min-width: 170px;          /* keeps it usable on smaller windows */
     padding: 20px 10px;
     background: #caa24a;       /* you can change colors */
     border-right: 2px solid #000;
