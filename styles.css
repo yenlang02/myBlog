@@ -76,8 +76,8 @@ header{
 header p{
     margin: 0;
     text-align: center;        /* centered within the space to the right of jump menu */
-    font-size: 32px;
-    font-weight: 700;
+    font-size: 25px;
+    font-weight: 600;
     font-family: "Times New Roman", serif;
     color: #000;
 }
