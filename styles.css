@@ -70,6 +70,7 @@ header{
     display: flex;
     flex-direction: column;
     justify-content: center;
+    padding-top: 12px;            /* NEW */
 }
   
 header p{
@@ -84,13 +85,16 @@ header p{
 /* the buttons row */
 header nav{
     margin-top: 14px;
+    background: #000;             /* NEW: black strip behind buttons */
     display: flex;
     justify-content: center;
-    gap: 18px;
+    gap: 0;                       /* was 18px */
+    padding: 0;                   /* NEW */
 }
   
 header nav button{
-    width: 240px;
+    flex: 1;                      /* NEW: evenly fill the row */
+    width: auto;                  /* remove fixed width; was 240px */
     padding: 14px 10px;
     font-size: 24px;
     color: #fff;
