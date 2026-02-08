@@ -10,7 +10,6 @@
     --headerHeight: 140px;
 }
   
-/* basic reset */
 *{ 
     box-sizing: border-box; 
 }
@@ -26,10 +25,10 @@ body{
     position: fixed;
     top: 0;
     left: 0;
-    bottom: 0;                 /* spans full height */
+    bottom: 0;  /* spans full height */
     width: var(--menuWidth);
     padding: 20px 10px;
-    background:#dea404;       /* you can change colors */
+    background:#dea404;     
     border-right: 2px solid #000;
     overflow-y: auto;
 }
@@ -52,7 +51,7 @@ body{
 /* the main content area */
 main{
     margin-left: var(--menuWidth);
-    padding-top: var(--headerHeight);  /* prevents content hiding under fixed header */
+    padding-top: var(--headerHeight);
 }
   
 /* header: fixed at top */
@@ -65,17 +64,16 @@ header{
     z-index: 1000;
     background: #e00000;
     border-bottom: 2px solid #000;
-  
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;  /* was center */
-    padding-top: 20px;            /* more red above title */
-    padding-bottom: 20px;         /* keeps nav away from bottom border */
+    justify-content: flex-start; 
+    padding-top: 20px;           
+    padding-bottom: 20px;     
 }
   
 header p{
-    margin: 0 0 16px 0;   /* was 0; adds red gap under title */
-    text-align: center;        /* centered within the space to the right of jump menu */
+    margin: 0 0 16px 0;   
+    text-align: center;    
     font-size: 28px;
     font-weight: 400;
     font-family: "Times New Roman", serif;
@@ -84,44 +82,41 @@ header p{
   
 /* buttons row */
 header nav{
-    margin-top: 18px;  /* was 14px */
-    background: #000;             /* NEW: black strip behind buttons */
+    margin-top: 18px; 
+    background: #000;          
     display: flex;
     justify-content: center;
-    gap: 40px;                       /* was 18px */
-
-    padding: 0;          /* ✅ no black showing above/below */
-    height: 60px;        /* ✅ locks the nav height */
-    align-items: center; /* ✅ buttons stretch to full height */
+    gap: 40px;                    
+    padding: 0;          
+    height: 60px;       
+    align-items: center;
 }
   
-header nav button{
-    /*flex: 1;                      /* NEW: evenly fill the row */
-    width: 260px;                  /* remove fixed width; was 240px */
+header nav button{                     
+    width: 260px;                 
     padding: 14px 10px;
     font-size: 24px;
-    height: 60px;        /* ✅ fills nav height exactly */
-    padding: 0;          /* optional: keeps height clean */
+    height: 60px;       
+    padding: 0;        
     color: #fff;
-    background: #0a23ff;
+    background: #0000ff;
     border: 2px solid #000;
     cursor: pointer;
 }
   
 /* page title */
 h1{
-    margin: 45px 0 35px 0;  /* ✅ more space above and below */
-    padding: 10px 0;        /* ✅ adds breathing room */
+    margin: 45px 0 35px 0;  
+    padding: 10px 0;      
     text-align: center;
     font-size: 44px;
     font-family: "Times New Roman", serif;
 }
   
-/* ARTICLES GRID (neat + reorganizes on resize) */
+/* journal articles grid: considers resizing window */
 #container{
     width: min(1400px, 96%);
     margin: 0 auto 60px auto;
-  
     display: grid;
     grid-template-columns: repeat(auto-fit, 300px);
     justify-content: center;
@@ -150,17 +145,16 @@ h1{
     bottom: 0;
     margin: 0;
     z-index: 1100;
-  
     padding: 18px 22px;
     font-size: 40px;
     font-family: "Times New Roman", serif;
-    background: #8fd0f3;
+    background: #87cefa;
     border: 2px solid #000;
 }
   
-/* FOOTER (optional cleanup) */
+/* footer: looks neater */
 footer{
-    padding: 30px 20px 80px 20px; /* extra bottom padding so footer text isn't under #thanks */
+    padding: 30px 20px 80px 20px;
     border-top: 2px solid #000;
 }
   
