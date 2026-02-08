@@ -69,12 +69,13 @@ header{
   
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    padding-top: 12px;            /* NEW */
+    justify-content: flex-start;  /* was center */
+    padding-top: 20px;            /* more red above title */
+    padding-bottom: 20px;         /* keeps nav away from bottom border */
 }
   
 header p{
-    margin: 0;
+    margin: 0 0 16px 0;   /* was 0; adds red gap under title */
     text-align: center;        /* centered within the space to the right of jump menu */
     font-size: 25px;
     font-weight: 600;
@@ -84,12 +85,12 @@ header p{
   
 /* buttons row */
 header nav{
-    margin-top: 14px;
+    margin-top: 18px;  /* was 14px */
     background: #000;             /* NEW: black strip behind buttons */
     display: flex;
     justify-content: center;
     gap: 40px;                       /* was 18px */
-    padding: 8px 0;                   /* NEW */
+    padding: 14px 0;               /* was 8px 0; gives black more height */
 }
   
 header nav button{
