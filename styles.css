@@ -92,8 +92,8 @@ header nav{
     gap: 40px;                       /* was 18px */
 
     padding: 0;          /* ✅ no black showing above/below */
-    height: 70px;        /* ✅ locks the nav height */
-    align-items: stretch;/* ✅ buttons stretch to full height */
+    height: 60px;        /* ✅ locks the nav height */
+    align-items: center; /* ✅ buttons stretch to full height */
 }
   
 header nav button{
@@ -101,7 +101,7 @@ header nav button{
     width: 260px;                  /* remove fixed width; was 240px */
     padding: 14px 10px;
     font-size: 24px;
-    height: 100%;        /* ✅ fills nav height exactly */
+    height: 60px;        /* ✅ fills nav height exactly */
     padding: 0;          /* optional: keeps height clean */
     color: #fff;
     background: #0a23ff;
