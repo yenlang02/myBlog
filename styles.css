@@ -28,7 +28,6 @@ body{
     left: 0;
     bottom: 0;                 /* spans full height */
     width: var(--menuWidth);
-    /*min-width: 170px;          /* keeps it usable on smaller windows */
     padding: 20px 10px;
     background: #caa24a;       /* you can change colors */
     border-right: 2px solid #000;
@@ -124,7 +123,7 @@ h1{
     margin: 0 auto 60px auto;
   
     display: grid;
-    grid-template-columns: repeat(auto-fit, 300px);
+    grid-template-columns: repeat(4, 300px);
     justify-content: center;
     gap: 38px;
 }
