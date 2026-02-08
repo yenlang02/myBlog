@@ -3,202 +3,156 @@
     Assignment: Week 3: CSS Positioning and Layout
 */
 
+
+/* ====== layout variables ====== */
 :root{
-    --menuW: 15%;
-    --headerH: 140px;
-    --gap: 26px;
-    --cardW: 300px;
-}
+    --menu-width: 15%;
+    --header-height: 140px;   /* adjust if your header feels taller/shorter */
+  }
   
-*{ box-sizing:border-box; }
-body{ 
-    margin:0; font-family: Georgia, "Times New Roman", serif; 
-}
+  /* ====== basic reset ====== */
+  * { box-sizing: border-box; }
   
-  /* ===== LEFT JUMP MENU (fixed, full height) ===== */
-  /* put your jump menu in an element with id="jumpMenu" if possible */
-#jumpMenu, #jump-menu, .jumpMenu, .jump-menu{
+  body{
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #ffffff;
+  }
+  
+  /* ====== LEFT JUMP MENU (fixed, full page height) ====== */
+  #jumpMenu{
     position: fixed;
     top: 0;
     left: 0;
-    width: var(--menuW);
-    height: 100vh;
+    bottom: 0;                 /* spans full height */
+    width: var(--menu-width);
+    min-width: 170px;          /* keeps it usable on smaller windows */
+    padding: 20px 10px;
+    background: #caa24a;       /* you can change colors */
+    border-right: 2px solid #000;
     overflow-y: auto;
-    background: #d19a2a;
-    border-right: 4px solid #000;
-    padding: 18px 16px;
-}
+  }
   
-#jumpMenu h1, #jump-menu h1, .jumpMenu h1, .jump-menu h1,
-#jumpMenu h2, #jump-menu h2, .jumpMenu h2, .jump-menu h2{
-    margin: 0 0 18px 0;
-    font-size: 44px;
-    font-weight: 900;
+  #jumpMenu h2{
+    margin: 0 0 16px 0;
     text-align: center;
-}
+    font-family: "Times New Roman", serif;
+    font-size: 34px;
+  }
   
-#jumpMenu a, #jump-menu a, .jumpMenu a, .jump-menu a{
-    display:block;
-    padding: 14px 6px;
+  #jumpMenu a{
+    display: block;
+    padding: 14px 0;
+    text-align: center;
     font-size: 22px;
-    color:#112bff;
-    text-decoration: underline;
-}
+    color: #0b36ff;
+  }
   
-  /* ===== FIXED HEADER (NOT SCROLLING) ===== */
-  /* put your top bar in <header id="header"> ... */
-header, #header, .header{
+  /* ====== MAIN CONTENT AREA (shift right of jump menu) ====== */
+  main{
+    margin-left: var(--menu-width);
+    padding-top: var(--header-height);  /* prevents content hiding under fixed header */
+  }
+  
+  /* ====== HEADER (fixed at top, ignores jump menu space) ====== */
+  header{
     position: fixed;
     top: 0;
-    left: var(--menuW);
-    width: calc(100% - var(--menuW));
-    height: var(--headerH);
+    left: var(--menu-width);
+    width: calc(100% - var(--menu-width));
+    height: var(--header-height);
     z-index: 1000;
-  
-    background: red;
-    border-bottom: 6px solid #000;
+    background: #e00000;
+    border-bottom: 2px solid #000;
   
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
-}
+  }
   
-header h1, #header h1, .header h1{
-    margin: 12px 0 8px 0;
-    font-size: 42px;
-    font-weight: 900;
-}
-  
-  /* ===== HEADER NAV BUTTONS (works for <a>, <button>, <input>) ===== */
-header nav, #header nav, .header nav,header ul, #header ul, .header ul{
+  header p{
     margin: 0;
-    padding: 0;
-    list-style: none;
-  
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: stretch;
-  
-    border-top: 6px solid #000; /* black bar look */
-}
-  
-  /* each nav item */
-header li, #header li, .header li{
-    flex: 1;
-    max-width: 260px;
-}
-  
-  /* style LINKS */
-header a, #header a, .header a{
-    display: block;
-    width: 100%;
-    text-align: center;
-    padding: 16px 10px;
-    background: #0b21ff;
-    color: #fff;
-    text-decoration: none;
-    font-size: 24px;
-    border-left: 18px solid #000;
-    border-right: 18px solid #000;
-}
-  
-  /* style BUTTONS/INPUTS if your nav uses them */
-header button, #header button, .header button,
-header input[type="button"], header input[type="submit"],
-#header input[type="button"], #header input[type="submit"]{
-    width: 100%;
-    padding: 16px 10px;
-    background: #0b21ff;
-    color: #fff;
-    font-size: 24px;
-    border: none;
-    border-left: 18px solid #000;
-    border-right: 18px solid #000;
-    cursor: pointer;
-    border-radius: 0;            /* removes pill look */
-    appearance: none;            /* removes default safari button style */
-    -webkit-appearance: none;
-}
-  
-/* ===== MAIN AREA shifted right/down so it doesn’t go under fixed menu/header ===== */
-main, #main, .main, #content, .content{
-    margin-left: var(--menuW);
-    padding-top: calc(var(--headerH) + 30px);
-    padding-left: 30px;
-    padding-right: 30px;
-}
-  
-main h2, #main h2, .main h2, #content h2, .content h2{
-    text-align:center;
-    font-size: 56px;
-    font-weight: 900;
-    margin: 24px 0 30px 0;
-}
-  
-/* ===== ARTICLE GRID (auto wraps on resize) ===== */
-/* This targets common patterns: article tags or sections/divs with ids like article1, article2, etc. */
-#articles, .articles, .article-grid{
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--gap);
-    justify-content: center;
-    align-items: flex-start;
-}
-  
-/* If you DON’T have a container, this forces the sections themselves to wrap */
-main{
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--gap);
-    justify-content: center;
-    align-items: flex-start;
-}
-  
-  /* cards */
-article, section[id^="article"], section[id*="Article"], div[id^="article"], div[id*="Article"], .article, .entry{
-    width: var(--cardW);
-    padding: 10px 10px 18px;
-}
-  
-  /* shrink the huge “Article 1” titles to match the example grid */
-article h2, article h3,
-section[id^="article"] h2, section[id^="article"] h3,
-div[id^="article"] h2, div[id^="article"] h3{
-    margin: 0 0 10px 0;
-    font-size: 26px;
-    font-weight: 900;
-    text-align: center;
-}
-  
-article p,
-section[id^="article"] p,
-div[id^="article"] p{
-    margin: 0 0 12px 0;
-    font-size: 14px;
-    line-height: 1.35;
-}
-  
-  /* ===== THANK YOU BOX fixed bottom-right ===== */
-#thanks, #thankYou, #thank-you, .thanks, .thankyou, .thank-you{
-    position: fixed;
-    right: 20px;
-    bottom: 20px;
-    z-index: 999;
-  
-    background: #89cfff;
-    border: 2px solid #000;
-    padding: 18px 28px;
+    text-align: center;        /* centered within the space to the right of jump menu */
     font-size: 44px;
-}
+    font-weight: 800;
+    font-family: "Times New Roman", serif;
+    color: #000;
+  }
   
-  /* small screens */
-@media (max-width: 800px){
-    :root{ --menuW: 180px; --headerH: 120px; }
-    header a, header button, #header a, #header button{
-        font-size: 18px;
-        padding: 12px 8px;
-    }
-}
+  /* the buttons row */
+  header nav{
+    margin-top: 14px;
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+  }
   
+  header nav button{
+    width: 240px;
+    padding: 14px 10px;
+    font-size: 24px;
+    color: #fff;
+    background: #0a23ff;
+    border: 2px solid #000;
+    cursor: pointer;
+  }
+  
+  /* ====== PAGE TITLE ====== */
+  h1{
+    margin: 30px 0 18px 0;
+    text-align: center;
+    font-size: 56px;
+    font-family: "Times New Roman", serif;
+  }
+  
+  /* ====== ARTICLES GRID (neat + reorganizes on resize) ====== */
+  #container{
+    width: min(1200px, 96%);
+    margin: 0 auto 60px auto;
+  
+    display: flex;
+    flex-wrap: wrap;            /* this is what makes it reorganize on resize */
+    justify-content: center;
+    gap: 38px;
+  }
+  
+  #container article{
+    width: 300px;               /* hint requirement */
+    line-height: 1.45;
+  }
+  
+  #container article h2{
+    margin: 0 0 10px 0;
+    font-size: 28px;
+  }
+  
+  #container article p{
+    margin: 0 0 10px 0;
+    font-size: 14px;
+  }
+  
+  /* ====== THANK YOU (always bottom-right) ====== */
+  #thanks{
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    margin: 0;
+    z-index: 1100;
+  
+    padding: 18px 22px;
+    font-size: 40px;
+    font-family: "Times New Roman", serif;
+    background: #8fd0f3;
+    border: 2px solid #000;
+  }
+  
+  /* ====== FOOTER (optional cleanup) ====== */
+  footer{
+    padding: 30px 20px 80px 20px; /* extra bottom padding so footer text isn't under #thanks */
+    border-top: 2px solid #000;
+  }
+  
+  footer p{
+    margin: 0 0 10px 0;
+    font-weight: 700;
+  }
