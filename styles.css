@@ -21,7 +21,7 @@ body{
     background: #ffffff;
 }
   
-/* jump menu: fixed,spans the entire height of the page */
+/* jump menu: fixed, spans the entire height of the page */
 #jumpMenu{
     position: fixed;
     top: 0;
@@ -29,7 +29,7 @@ body{
     bottom: 0;                 /* spans full height */
     width: var(--menuWidth);
     padding: 20px 10px;
-    background: #caa24a;       /* you can change colors */
+    background:#dea404;       /* you can change colors */
     border-right: 2px solid #000;
     overflow-y: auto;
 }
