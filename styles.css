@@ -8,14 +8,16 @@
     --headerH: 140px;
     --gap: 26px;
     --cardW: 300px;
-  }
+}
   
-  *{ box-sizing:border-box; }
-  body{ margin:0; font-family: Georgia, "Times New Roman", serif; }
+*{ box-sizing:border-box; }
+body{ 
+    margin:0; font-family: Georgia, "Times New Roman", serif; 
+}
   
   /* ===== LEFT JUMP MENU (fixed, full height) ===== */
   /* put your jump menu in an element with id="jumpMenu" if possible */
-  #jumpMenu, #jump-menu, .jumpMenu, .jump-menu{
+#jumpMenu, #jump-menu, .jumpMenu, .jump-menu{
     position: fixed;
     top: 0;
     left: 0;
@@ -25,27 +27,27 @@
     background: #d19a2a;
     border-right: 4px solid #000;
     padding: 18px 16px;
-  }
+}
   
-  #jumpMenu h1, #jump-menu h1, .jumpMenu h1, .jump-menu h1,
-  #jumpMenu h2, #jump-menu h2, .jumpMenu h2, .jump-menu h2{
+#jumpMenu h1, #jump-menu h1, .jumpMenu h1, .jump-menu h1,
+#jumpMenu h2, #jump-menu h2, .jumpMenu h2, .jump-menu h2{
     margin: 0 0 18px 0;
     font-size: 44px;
     font-weight: 900;
     text-align: center;
-  }
+}
   
-  #jumpMenu a, #jump-menu a, .jumpMenu a, .jump-menu a{
+#jumpMenu a, #jump-menu a, .jumpMenu a, .jump-menu a{
     display:block;
     padding: 14px 6px;
     font-size: 22px;
     color:#112bff;
     text-decoration: underline;
-  }
+}
   
   /* ===== FIXED HEADER (NOT SCROLLING) ===== */
   /* put your top bar in <header id="header"> ... */
-  header, #header, .header{
+header, #header, .header{
     position: fixed;
     top: 0;
     left: var(--menuW);
@@ -60,17 +62,16 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-  }
+}
   
-  header h1, #header h1, .header h1{
+header h1, #header h1, .header h1{
     margin: 12px 0 8px 0;
     font-size: 42px;
     font-weight: 900;
-  }
+}
   
   /* ===== HEADER NAV BUTTONS (works for <a>, <button>, <input>) ===== */
-  header nav, #header nav, .header nav,
-  header ul, #header ul, .header ul{
+header nav, #header nav, .header nav,header ul, #header ul, .header ul{
     margin: 0;
     padding: 0;
     list-style: none;
@@ -81,16 +82,16 @@
     align-items: stretch;
   
     border-top: 6px solid #000; /* black bar look */
-  }
+}
   
   /* each nav item */
-  header li, #header li, .header li{
+header li, #header li, .header li{
     flex: 1;
     max-width: 260px;
-  }
+}
   
   /* style LINKS */
-  header a, #header a, .header a{
+header a, #header a, .header a{
     display: block;
     width: 100%;
     text-align: center;
@@ -101,12 +102,12 @@
     font-size: 24px;
     border-left: 18px solid #000;
     border-right: 18px solid #000;
-  }
+}
   
   /* style BUTTONS/INPUTS if your nav uses them */
-  header button, #header button, .header button,
-  header input[type="button"], header input[type="submit"],
-  #header input[type="button"], #header input[type="submit"]{
+header button, #header button, .header button,
+header input[type="button"], header input[type="submit"],
+#header input[type="button"], #header input[type="submit"]{
     width: 100%;
     padding: 16px 10px;
     background: #0b21ff;
@@ -119,71 +120,68 @@
     border-radius: 0;            /* removes pill look */
     appearance: none;            /* removes default safari button style */
     -webkit-appearance: none;
-  }
+}
   
-  /* ===== MAIN AREA shifted right/down so it doesn’t go under fixed menu/header ===== */
-  main, #main, .main, #content, .content{
+/* ===== MAIN AREA shifted right/down so it doesn’t go under fixed menu/header ===== */
+main, #main, .main, #content, .content{
     margin-left: var(--menuW);
     padding-top: calc(var(--headerH) + 30px);
     padding-left: 30px;
     padding-right: 30px;
-  }
+}
   
-  main h2, #main h2, .main h2, #content h2, .content h2{
+main h2, #main h2, .main h2, #content h2, .content h2{
     text-align:center;
     font-size: 56px;
     font-weight: 900;
     margin: 24px 0 30px 0;
-  }
+}
   
-  /* ===== ARTICLE GRID (auto wraps on resize) ===== */
-  /* This targets common patterns: article tags or sections/divs with ids like article1, article2, etc. */
-  #articles, .articles, .article-grid{
+/* ===== ARTICLE GRID (auto wraps on resize) ===== */
+/* This targets common patterns: article tags or sections/divs with ids like article1, article2, etc. */
+#articles, .articles, .article-grid{
     display: flex;
     flex-wrap: wrap;
     gap: var(--gap);
     justify-content: center;
     align-items: flex-start;
-  }
+}
   
-  /* If you DON’T have a container, this forces the sections themselves to wrap */
-  main{
+/* If you DON’T have a container, this forces the sections themselves to wrap */
+main{
     display: flex;
     flex-wrap: wrap;
     gap: var(--gap);
     justify-content: center;
     align-items: flex-start;
-  }
+}
   
   /* cards */
-  article,
-  section[id^="article"], section[id*="Article"],
-  div[id^="article"], div[id*="Article"],
-  .article, .entry{
+article, section[id^="article"], section[id*="Article"], div[id^="article"], div[id*="Article"], .article, .entry{
     width: var(--cardW);
     padding: 10px 10px 18px;
-  }
+}
   
   /* shrink the huge “Article 1” titles to match the example grid */
-  article h2, article h3,
-  section[id^="article"] h2, section[id^="article"] h3,
-  div[id^="article"] h2, div[id^="article"] h3{
+article h2, article h3,
+section[id^="article"] h2, section[id^="article"] h3,
+div[id^="article"] h2, div[id^="article"] h3{
     margin: 0 0 10px 0;
     font-size: 26px;
     font-weight: 900;
     text-align: center;
-  }
+}
   
-  article p,
-  section[id^="article"] p,
-  div[id^="article"] p{
+article p,
+section[id^="article"] p,
+div[id^="article"] p{
     margin: 0 0 12px 0;
     font-size: 14px;
     line-height: 1.35;
-  }
+}
   
   /* ===== THANK YOU BOX fixed bottom-right ===== */
-  #thanks, #thankYou, #thank-you, .thanks, .thankyou, .thank-you{
+#thanks, #thankYou, #thank-you, .thanks, .thankyou, .thank-you{
     position: fixed;
     right: 20px;
     bottom: 20px;
@@ -193,14 +191,14 @@
     border: 2px solid #000;
     padding: 18px 28px;
     font-size: 44px;
-  }
+}
   
   /* small screens */
-  @media (max-width: 800px){
+@media (max-width: 800px){
     :root{ --menuW: 180px; --headerH: 120px; }
     header a, header button, #header a, #header button{
-      font-size: 18px;
-      padding: 12px 8px;
+        font-size: 18px;
+        padding: 12px 8px;
     }
-  }
+}
   
