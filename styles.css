@@ -7,10 +7,10 @@
 /* layout variables */
 :root{
     --menuWidth: 15%;
-    --headerHeight: 140px;   /* adjust if your header feels taller/shorter */
+    --headerHeight: 140px;
 }
   
-/*  basic reset  */
+/* basic reset */
 *{ 
     box-sizing: border-box; 
 }
@@ -21,7 +21,7 @@ body{
     background: #ffffff;
 }
   
-/* LEFT JUMP MENU (fixed, full page height) */
+/* jump menu: fixed,spans the entire height of the page */
 #jumpMenu{
     position: fixed;
     top: 0;
@@ -50,13 +50,13 @@ body{
     color: #0b36ff;
 }
   
-/* MAIN CONTENT AREA (shift right of jump menu) */
+/* the main content area */
 main{
     margin-left: var(--menuWidth);
     padding-top: var(--headerHeight);  /* prevents content hiding under fixed header */
 }
   
-/* HEADER (fixed at top, ignores jump menu space) */
+/* header: fixed at top */
 header{
     position: fixed;
     top: 0;
@@ -82,7 +82,7 @@ header p{
     color: #000;
 }
   
-/* the buttons row */
+/* buttons row */
 header nav{
     margin-top: 14px;
     background: #000;             /* NEW: black strip behind buttons */
@@ -103,7 +103,7 @@ header nav button{
     cursor: pointer;
 }
   
-/* PAGE TITLE */
+/* page title */
 h1{
     margin: 30px 0 18px 0;
     text-align: center;
@@ -117,13 +117,13 @@ h1{
     margin: 0 auto 60px auto;
   
     display: flex;
-    flex-wrap: wrap;            /* this is what makes it reorganize on resize */
+    flex-wrap: wrap; 
     justify-content: center;
     gap: 38px;
 }
   
 #container article{
-    width: 300px;               /* hint requirement */
+    width: 300px;        
     line-height: 1.45;
 }
   
@@ -137,7 +137,7 @@ h1{
     font-size: 14px;
 }
   
-/* THANK YOU (always bottom-right) */
+/* "Thank You" block */
 #thanks{
     position: fixed;
     right: 0;
