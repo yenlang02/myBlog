@@ -4,63 +4,65 @@
 */
 
 
-/* ====== layout variables ====== */
+/* layout variables */
 :root{
-    --menu-width: 15%;
-    --header-height: 140px;   /* adjust if your header feels taller/shorter */
-  }
+    --menuWidth: 15%;
+    --headerHeight: 140px;   /* adjust if your header feels taller/shorter */
+}
   
-  /* ====== basic reset ====== */
-  * { box-sizing: border-box; }
+/*  basic reset  */
+*{ 
+    box-sizing: border-box; 
+}
   
-  body{
+body{
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
     background: #ffffff;
-  }
+}
   
-  /* ====== LEFT JUMP MENU (fixed, full page height) ====== */
-  #jumpMenu{
+/* LEFT JUMP MENU (fixed, full page height) */
+#jumpMenu{
     position: fixed;
     top: 0;
     left: 0;
     bottom: 0;                 /* spans full height */
-    width: var(--menu-width);
+    width: var(--menuWidth);
     min-width: 170px;          /* keeps it usable on smaller windows */
     padding: 20px 10px;
     background: #caa24a;       /* you can change colors */
     border-right: 2px solid #000;
     overflow-y: auto;
-  }
+}
   
-  #jumpMenu h2{
+#jumpMenu h2{
     margin: 0 0 16px 0;
     text-align: center;
     font-family: "Times New Roman", serif;
     font-size: 34px;
-  }
+}
   
-  #jumpMenu a{
+#jumpMenu a{
     display: block;
     padding: 14px 0;
     text-align: center;
     font-size: 22px;
     color: #0b36ff;
-  }
+}
   
-  /* ====== MAIN CONTENT AREA (shift right of jump menu) ====== */
-  main{
-    margin-left: var(--menu-width);
-    padding-top: var(--header-height);  /* prevents content hiding under fixed header */
-  }
+/* MAIN CONTENT AREA (shift right of jump menu) */
+main{
+    margin-left: var(--menuWidth);
+    padding-top: var(--headerHeight);  /* prevents content hiding under fixed header */
+}
   
-  /* ====== HEADER (fixed at top, ignores jump menu space) ====== */
-  header{
+/* HEADER (fixed at top, ignores jump menu space) */
+header{
     position: fixed;
     top: 0;
-    left: var(--menu-width);
-    width: calc(100% - var(--menu-width));
-    height: var(--header-height);
+    left: var(--menuWidth);
+    width: calc(100% - var(--menuWidth));
+    height: var(--headerHeight);
     z-index: 1000;
     background: #e00000;
     border-bottom: 2px solid #000;
@@ -68,26 +70,26 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-  }
+}
   
-  header p{
+header p{
     margin: 0;
     text-align: center;        /* centered within the space to the right of jump menu */
-    font-size: 120px;
+    font-size: 100px;
     font-weight: 800;
     font-family: "Times New Roman", serif;
     color: #000;
-  }
+}
   
-  /* the buttons row */
-  header nav{
+/* the buttons row */
+header nav{
     margin-top: 14px;
     display: flex;
     justify-content: center;
     gap: 18px;
-  }
+}
   
-  header nav button{
+header nav button{
     width: 240px;
     padding: 14px 10px;
     font-size: 24px;
@@ -95,18 +97,18 @@
     background: #0a23ff;
     border: 2px solid #000;
     cursor: pointer;
-  }
+}
   
-  /* ====== PAGE TITLE ====== */
-  h1{
+/* PAGE TITLE */
+h1{
     margin: 30px 0 18px 0;
     text-align: center;
-    font-size: 56px;
+    font-size: 50px;
     font-family: "Times New Roman", serif;
-  }
+}
   
-  /* ====== ARTICLES GRID (neat + reorganizes on resize) ====== */
-  #container{
+/* ARTICLES GRID (neat + reorganizes on resize) */
+#container{
     width: min(1200px, 96%);
     margin: 0 auto 60px auto;
   
@@ -114,25 +116,25 @@
     flex-wrap: wrap;            /* this is what makes it reorganize on resize */
     justify-content: center;
     gap: 38px;
-  }
+}
   
-  #container article{
+#container article{
     width: 300px;               /* hint requirement */
     line-height: 1.45;
-  }
+}
   
-  #container article h2{
+#container article h2{
     margin: 0 0 10px 0;
     font-size: 28px;
-  }
+}
   
-  #container article p{
+#container article p{
     margin: 0 0 10px 0;
     font-size: 14px;
-  }
+}
   
-  /* ====== THANK YOU (always bottom-right) ====== */
-  #thanks{
+/* THANK YOU (always bottom-right) */
+#thanks{
     position: fixed;
     right: 0;
     bottom: 0;
@@ -144,15 +146,15 @@
     font-family: "Times New Roman", serif;
     background: #8fd0f3;
     border: 2px solid #000;
-  }
+}
   
-  /* ====== FOOTER (optional cleanup) ====== */
-  footer{
+/* FOOTER (optional cleanup) */
+footer{
     padding: 30px 20px 80px 20px; /* extra bottom padding so footer text isn't under #thanks */
     border-top: 2px solid #000;
-  }
+}
   
-  footer p{
+footer p{
     margin: 0 0 10px 0;
     font-weight: 700;
-  }
+}
