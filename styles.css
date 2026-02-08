@@ -77,8 +77,8 @@ header{
 header p{
     margin: 0 0 16px 0;   /* was 0; adds red gap under title */
     text-align: center;        /* centered within the space to the right of jump menu */
-    font-size: 25px;
-    font-weight: 600;
+    font-size: 28px;
+    font-weight: 400;
     font-family: "Times New Roman", serif;
     color: #000;
 }
@@ -90,7 +90,10 @@ header nav{
     display: flex;
     justify-content: center;
     gap: 40px;                       /* was 18px */
-    padding: 14px 0;               /* was 8px 0; gives black more height */
+
+    padding: 0;          /* ✅ no black showing above/below */
+    height: 70px;        /* ✅ locks the nav height */
+    align-items: stretch;/* ✅ buttons stretch to full height */
 }
   
 header nav button{
@@ -98,6 +101,8 @@ header nav button{
     width: 260px;                  /* remove fixed width; was 240px */
     padding: 14px 10px;
     font-size: 24px;
+    height: 100%;        /* ✅ fills nav height exactly */
+    padding: 0;          /* optional: keeps height clean */
     color: #fff;
     background: #0a23ff;
     border: 2px solid #000;
@@ -106,7 +111,8 @@ header nav button{
   
 /* page title */
 h1{
-    margin: 30px 0 18px 0;
+    margin: 45px 0 35px 0;  /* ✅ more space above and below */
+    padding: 10px 0;        /* ✅ adds breathing room */
     text-align: center;
     font-size: 44px;
     font-family: "Times New Roman", serif;
