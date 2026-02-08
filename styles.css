@@ -88,13 +88,13 @@ header nav{
     background: #000;             /* NEW: black strip behind buttons */
     display: flex;
     justify-content: center;
-    gap: 0;                       /* was 18px */
-    padding: 0;                   /* NEW */
+    gap: 40px;                       /* was 18px */
+    padding: 8px 0;                   /* NEW */
 }
   
 header nav button{
-    flex: 1;                      /* NEW: evenly fill the row */
-    width: auto;                  /* remove fixed width; was 240px */
+    /*flex: 1;                      /* NEW: evenly fill the row */
+    width: 240px;                  /* remove fixed width; was 240px */
     padding: 14px 10px;
     font-size: 24px;
     color: #fff;
