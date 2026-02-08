@@ -123,8 +123,8 @@ h1{
     width: min(1400px, 96%);
     margin: 0 auto 60px auto;
   
-    display: flex;
-    flex-wrap: wrap; 
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 300px);
     justify-content: center;
     gap: 38px;
 }
